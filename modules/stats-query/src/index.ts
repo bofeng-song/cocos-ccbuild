@@ -5,7 +5,7 @@ import dedent from 'dedent';
 import { Config, Context, Feature, IndexConfig, Test, IConstantConfig, IConstantInfo } from './config-interface';
 
 import * as ConfigInterface from './config-interface';
-import { PlatformType as _PlatformType } from '../../modularize/lib/index';
+import { PlatformType as _PlatformType } from '@ccbuild/modularize';
 export { ConfigInterface };
 
 /**
