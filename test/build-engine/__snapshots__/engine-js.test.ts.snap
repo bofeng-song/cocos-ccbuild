@@ -1086,7 +1086,7 @@ exports[`engine-js HTML5 with treeshake option 2`] = `
             }
             tryDefineGlobal('CC_WECHAT', false);
             tryDefineGlobal('CC_BAIDU', false);
-            tryDefineGlobal('CC_XIAOMI', false);
+            
             tryDefineGlobal('CC_ALIPAY', false);
             tryDefineGlobal('CC_BYTEDANCE', false);
             tryDefineGlobal('CC_OPPO', false);
@@ -1222,7 +1222,7 @@ exports[`engine-js WECHAT with treeshake option 2`] = `
             }
             tryDefineGlobal('CC_WECHAT', true);
             tryDefineGlobal('CC_BAIDU', false);
-            tryDefineGlobal('CC_XIAOMI', false);
+            
             tryDefineGlobal('CC_ALIPAY', false);
             tryDefineGlobal('CC_BYTEDANCE', false);
             tryDefineGlobal('CC_OPPO', false);
@@ -1292,7 +1292,7 @@ exports[`engine-js build WASM module on platform maybe supporting WASM 2`] = `
             }
             tryDefineGlobal('CC_WECHAT', false);
             tryDefineGlobal('CC_BAIDU', false);
-            tryDefineGlobal('CC_XIAOMI', false);
+            
             tryDefineGlobal('CC_ALIPAY', false);
             tryDefineGlobal('CC_BYTEDANCE', false);
             tryDefineGlobal('CC_OPPO', false);
@@ -1904,7 +1904,7 @@ exports[`engine-js build WASM module on platform not supporting WASM 2`] = `
             }
             tryDefineGlobal('CC_WECHAT', false);
             tryDefineGlobal('CC_BAIDU', false);
-            tryDefineGlobal('CC_XIAOMI', true);
+            
             tryDefineGlobal('CC_ALIPAY', false);
             tryDefineGlobal('CC_BYTEDANCE', false);
             tryDefineGlobal('CC_OPPO', false);
@@ -2060,7 +2060,7 @@ exports[`engine-js build WASM module on platform supporting WASM 2`] = `
             }
             tryDefineGlobal('CC_WECHAT', true);
             tryDefineGlobal('CC_BAIDU', false);
-            tryDefineGlobal('CC_XIAOMI', false);
+            
             tryDefineGlobal('CC_ALIPAY', false);
             tryDefineGlobal('CC_BYTEDANCE', false);
             tryDefineGlobal('CC_OPPO', false);
@@ -2622,7 +2622,7 @@ exports[`engine-js build width option nativeCodeBundleMode asmjs 1`] = `
 }
 tryDefineGlobal('CC_WECHAT', false);
 tryDefineGlobal('CC_BAIDU', false);
-tryDefineGlobal('CC_XIAOMI', true);
+
 tryDefineGlobal('CC_ALIPAY', false);
 tryDefineGlobal('CC_BYTEDANCE', false);
 tryDefineGlobal('CC_OPPO', false);
@@ -2660,7 +2660,7 @@ exports[`engine-js build width option nativeCodeBundleMode both 1`] = `
 }
 tryDefineGlobal('CC_WECHAT', false);
 tryDefineGlobal('CC_BAIDU', false);
-tryDefineGlobal('CC_XIAOMI', true);
+
 tryDefineGlobal('CC_ALIPAY', false);
 tryDefineGlobal('CC_BYTEDANCE', false);
 tryDefineGlobal('CC_OPPO', false);
@@ -2698,7 +2698,7 @@ exports[`engine-js build width option nativeCodeBundleMode wasm 1`] = `
 }
 tryDefineGlobal('CC_WECHAT', false);
 tryDefineGlobal('CC_BAIDU', false);
-tryDefineGlobal('CC_XIAOMI', true);
+
 tryDefineGlobal('CC_ALIPAY', false);
 tryDefineGlobal('CC_BYTEDANCE', false);
 tryDefineGlobal('CC_OPPO', false);
@@ -2758,7 +2758,7 @@ exports[`engine-js cull meshopt: with wasm support 2`] = `
 			}
 			tryDefineGlobal('CC_WECHAT', true);
 			tryDefineGlobal('CC_BAIDU', false);
-			tryDefineGlobal('CC_XIAOMI', false);
+			
 			tryDefineGlobal('CC_ALIPAY', false);
 			tryDefineGlobal('CC_BYTEDANCE', false);
 			tryDefineGlobal('CC_OPPO', false);
@@ -2822,7 +2822,7 @@ exports[`engine-js cull meshopt: without wasm support 2`] = `
             }
             tryDefineGlobal('CC_WECHAT', false);
             tryDefineGlobal('CC_BAIDU', false);
-            tryDefineGlobal('CC_XIAOMI', false);
+            
             tryDefineGlobal('CC_ALIPAY', false);
             tryDefineGlobal('CC_BYTEDANCE', true);
             tryDefineGlobal('CC_OPPO', false);
@@ -3325,7 +3325,7 @@ exports[`engine-js intrinsic flag 1`] = `
 }
 tryDefineGlobal('CC_WECHAT', false);
 tryDefineGlobal('CC_BAIDU', false);
-tryDefineGlobal('CC_XIAOMI', true);
+
 tryDefineGlobal('CC_ALIPAY', false);
 tryDefineGlobal('CC_BYTEDANCE', false);
 tryDefineGlobal('CC_OPPO', false);
