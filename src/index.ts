@@ -7,4 +7,6 @@ export { StatsQuery, ConfigInterface } from '@ccbuild/stats-query';
 export { Transformer, Bundler };
 export { Modularize };
 export { dtsBundler };
+export { registerPlatform, registerPlatformDefinitions, getPlatformDefinitions } from '@ccbuild/modularize';
+export type { DisposePlatform, PlatformDefinition } from '@ccbuild/modularize';
 

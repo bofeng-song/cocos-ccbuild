@@ -15136,24 +15136,28 @@ declare module "@cocos/ccbuild" {
             WEB_DESKTOP = 2
         }
         export function validatePlatformDefinitions(values: readonly PlatformDefinition[]): PlatformDefinition[];
-        export function registerPlatformDefinitions(values: readonly PlatformDefinition[]): void;
+        /** Register one platform. Equal repeated registrations are reference-counted. */
+        export function registerPlatform(value: PlatformDefinition): DisposePlatform;
+        /** Register multiple platforms atomically and dispose them as a group. */
+        export function registerPlatformDefinitions(values: readonly PlatformDefinition[]): DisposePlatform;
         export function getPlatformDefinitions(): PlatformDefinition[];
         export function withPlatformDefinitions<T>(values: readonly PlatformDefinition[], action: () => T): T;
         export function getPlatformCategory(id: string): PlatformDefinition["category"] | undefined;
         /** Shared by source builds and versioned package backports. Mutates a freshly parsed config only. */
         export function extendPlatformConstants(config: Record<string, PlatformConstant>, values?: PlatformDefinition[]): void;
         export function getPlatformModuleOverrides(engine: string, platform: string | undefined, values?: PlatformDefinition[]): Record<string, string>;
-        /** Serializable extension contract. Register before creating queries; restart to change definitions. */
+        /** Serializable engine-platform definition. */
         export interface PlatformDefinition {
             id: string;
             category: "web" | "minigame" | "native";
-            /** Runtime-based games still resolve PAL minigame exports, but use RUNTIME_BASED constants. */
+            /** Runtime-based games use RUNTIME_BASED instead of MINIGAME. */
             runtimeMode?: "web" | "minigame" | "runtime" | "native";
             /** Virtual PAL specifier -> engine-relative implementation. */
             moduleOverrides?: Record<string, string>;
         }
+        export type DisposePlatform = () => void;
         /** Feature level consumed by platform plugin hosts. */
-        export const platformRegistryVersion = 2;
+        export const platformRegistryVersion = 3;
         export interface PlatformConstant {
             comment: string;
             type: "boolean" | "number";
@@ -15170,6 +15174,11 @@ declare module "@cocos/ccbuild" {
             outDir: string;
         }
     }
+    export import registerPlatform = Modularize.registerPlatform;
+    export import registerPlatformDefinitions = Modularize.registerPlatformDefinitions;
+    export import getPlatformDefinitions = Modularize.getPlatformDefinitions;
+    export import PlatformDefinition = Modularize.PlatformDefinition;
+    export import DisposePlatform = Modularize.DisposePlatform;
     export namespace __private {
         export type ___node_modules_babel_types_lib_index__NodeTypesWithoutComment = Transformer.babel.core.types.Node["type"] | keyof Transformer.babel.core.types.Aliases;
         export interface ___node_modules_babel_types_lib_index__BaseNode {
