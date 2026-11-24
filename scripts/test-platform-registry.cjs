@@ -86,6 +86,7 @@ const write = (file, value) => {
     for (const id of ['WECHAT', 'DEBUG', 'RUNTIME_BASED', 'SUPPORT_JIT']) {
         assert.throws(() => registry.registerPlatform({ id, category: 'web' }), /built-in/);
     }
+    assert.deepEqual(registry.getPlatformDefinitions(), []);
     assert.throws(() => registry.registerPlatform({ id: '../BAD', category: 'web' }), /Invalid/);
     assert.throws(() => registry.validatePlatformDefinitions([
         { id: 'BAD_PATH', category: 'minigame', moduleOverrides: { 'pal/env': 1 } },
@@ -100,6 +101,24 @@ const write = (file, value) => {
     disposeFirst();
     assert.deepEqual(registry.getPlatformDefinitions(), [referenceDefinition]);
     disposeSecond();
+    assert.deepEqual(registry.getPlatformDefinitions(), []);
+
+    const disposeGlobalGame = registry.registerPlatform({ id: 'GLOBAL_GAME', category: 'minigame' });
+    const globalBuiltInValues = new StatsQuery.ConstantManager(temp).genCCEnvConstants({
+        platform: 'HTML5',
+        mode: 'BUILD',
+        flags: {},
+    });
+    assert.equal(globalBuiltInValues.GLOBAL_GAME, false);
+    await registry.withPlatformDefinitions([], async () => {
+        const isolatedBuiltInValues = new StatsQuery.ConstantManager(temp).genCCEnvConstants({
+            platform: 'HTML5',
+            mode: 'BUILD',
+            flags: {},
+        });
+        assert.equal('GLOBAL_GAME' in isolatedBuiltInValues, false);
+    });
+    disposeGlobalGame();
     assert.deepEqual(registry.getPlatformDefinitions(), []);
 
     const keep = registry.registerPlatform({ id: 'KEEP_RUNTIME', category: 'minigame', runtimeMode: 'runtime' });
