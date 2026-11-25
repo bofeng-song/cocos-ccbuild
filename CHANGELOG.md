@@ -1,5 +1,11 @@
 # Change Log - @cocos/ccbuild
 
+## 2.3.22
+
+### Patch Changes
+
+- Support dynamic register platform
+
 ## 2.3.21
 
 ### Patch Changes
