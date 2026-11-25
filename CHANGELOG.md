@@ -1,6 +1,6 @@
 # Change Log - @cocos/ccbuild
 
-## 2.3.22
+## 2.3.24
 
 ### Patch Changes
 
